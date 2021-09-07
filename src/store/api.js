@@ -2,12 +2,17 @@
 export default {
   state: {
     usersEventsList: [],
+    usersOnlineList: [],
     usersList: [],
     logList: [],
     loadUsersEventsTimer: null
   },
 
   mutations: {
+
+    setUsersOnlineList (state, payload) {
+      state.usersOnlineList = payload
+    },
 
     setUsersEventsList (state, payload) {
       state.usersEventsList = payload
@@ -24,6 +29,10 @@ export default {
   },
 
   actions: {
+    async loadUsersOnline ({ commit, dispatch }) {
+      const res = await dispatch('http', { url: '/api/users/online' })
+      if (res) commit('setUsersOnlineList', res)
+    },
 
     async loadUsersEvents ({ commit, dispatch }) {
       const res = await dispatch('http', { url: '/api/users/events' })
@@ -51,6 +60,7 @@ export default {
   },
 
   getters: {
+    getUsersOnline: state => state.usersOnlineList,
     getUsersEvents: state => state.usersEventsList,
     getUsersList: state => state.usersList,
     getLogList: state => state.logList

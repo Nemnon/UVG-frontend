@@ -13,6 +13,7 @@
           active-text-color="#ffd04b"
         >
           <el-menu-item index="/">Events</el-menu-item>
+          <el-menu-item index="/online">Online</el-menu-item>
           <el-menu-item index="/users">Users</el-menu-item>
           <el-menu-item index="/logs">Logs</el-menu-item>
         </el-menu>

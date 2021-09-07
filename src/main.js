@@ -3,10 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './plugins/element.js'
-import axios from 'axios'
+// import axios from 'axios'
 import 'element-theme-dark'
 
-axios.defaults.baseURL = process.env.VUE_APP_API_URL
+// axios.defaults.baseURL = process.env.VUE_APP_API_URL
 
 Vue.config.productionTip = false
 

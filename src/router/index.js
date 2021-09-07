@@ -5,6 +5,7 @@ import Users from '@/views/Users.vue'
 import Login from '@/views/Login.vue'
 import RouteGuard from '@/router/routeGuard'
 import Logs from '@/views/Logs'
+import Online from '@/views/Online'
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,12 @@ const routes = [
     path: '/',
     name: 'events',
     component: Events,
+    beforeEnter: RouteGuard
+  },
+  {
+    path: '/online',
+    name: 'online',
+    component: Online,
     beforeEnter: RouteGuard
   },
   {
